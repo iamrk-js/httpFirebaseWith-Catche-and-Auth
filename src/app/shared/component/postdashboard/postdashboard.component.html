@@ -1,0 +1,14 @@
+<div class="col-lg-6 offset-lg-3">
+  <div class="card mb-4" *ngFor="let post of postsArray">
+    <div class="card-header">
+      <h3>{{post.title}}</h3>
+    </div>
+    <div class="card-body">
+      {{post.body}}
+    </div>
+    <div class="card-footer d-flex justify-content-between">
+      <button class="btn btn-info" [routerLink]="['/updatePost', post.id]">Edit</button>
+      <button class="btn btn-danger" (click)="onDelete(post.id)">Delete</button>
+    </div>
+  </div>
+</div>
